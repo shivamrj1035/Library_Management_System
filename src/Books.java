@@ -25,6 +25,6 @@ public class Books {
         bookQuantity=scan.nextInt();
     }
     void display(){
-        System.out.println("No : "+serialNo+" : Book Name : "+bookName+" Author Name : "+authorName+" Quantity : "+bookQuantity);
+        System.out.println("No : "+serialNo+"     Book Name : "+bookName+"     Author Name : "+authorName+"     Quantity : "+bookQuantity);
     }
 }
