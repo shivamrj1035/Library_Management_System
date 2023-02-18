@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Librarian {
     Scanner scan=new Scanner(System.in);
     String password,fullName,librarianId,age;
-    int choice,count=0;
     boolean access;
     Librarian(String librarianId,String fullName,String password,String age) {
         this.librarianId=librarianId;
@@ -22,7 +21,6 @@ public class Librarian {
         enterPassword();
         createLibrarianID();
         System.out.println("You have successfully Signed Up \n Your login Id is : "+librarianId);
-        return;
     }
     void enterPassword() {
         System.out.print("Enter Password : ");

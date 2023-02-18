@@ -4,6 +4,7 @@ public class Student {
     Scanner scan=new Scanner(System.in);
     String studentName,enrollmentNumber;
     String libID;
+    int[] issuedBookID={0,0,0};
     static int serial=1001;
     Student(String studentName,String enrollmentNumber) {
         libID="S"+serial++;
@@ -41,5 +42,52 @@ public class Student {
             }
         }
     }
+    void displayOneStudent() {
+        System.out.println("Id : "+libID+"\nEnrollment Number : "+enrollmentNumber+"\nName : "+studentName);
+        System.out.println();
+        System.out.println("Issued Book ID");
+        int count=0;
+        for(int i=0;i<3;i++) {
+            if(issuedBookID[i]!=0) {
+                System.out.println(issuedBookID[i]);
+                count++;
+            }
+        }
+        if(count==0) {
+            System.out.println("None");
+        }
+    }
+    int count(){
+        int countIssuedBook=0;
+        for(int i=0;i<3;i++) {
+            if(issuedBookID[i]!=0) {
+                countIssuedBook++;
+            }
+        }
+        return (countIssuedBook);
+    }
+    void issueBook(int id) {
+        for(int i=0;i<3;i++) {
+            if(issuedBookID[i]==0) {
+                issuedBookID[i]=id;
+                break;
+            }
+        }
+    }
+    boolean checkBook(int id) {
+        for(int i=0;i<3;i++) {
+            if(issuedBookID[i]==id) {
+                return  true;
+            }
+        }
+        return false;
+    }
+    void returnBook(int id) {
+        for(int i=0;i<3;i++) {
+            if(issuedBookID[i]==id) {
+                issuedBookID[i]=0;
+                break;
+            }
+        }
+    }
 }
-

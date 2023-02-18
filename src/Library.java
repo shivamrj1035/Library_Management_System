@@ -149,14 +149,15 @@ public class Library {
         System.out.println("Press 4 to Show All Books.");
         System.out.println("Press 5 to Register Student.");
         System.out.println("Press 6 to Show All Registered Students.");
-        System.out.println("Press 7 to Check Out Book. ");
-        System.out.println("Press 8 to Check In Book");
-        System.out.println("Press 9 to Show All Registered Librarians.");
+        System.out.println("Press 7 to issue Book. ");
+        System.out.println("Press 8 to return Book");
+        System.out.println("Press 9 to search a student");
+        System.out.println("Press 10 to Show All Registered Librarians.");
         System.out.println("***************************************************************");
         choice_2= scan.nextInt();
         switch (choice_2) {
             case 0:
-            case 9:
+            case 10:
                 return;
             case 1: System.out.print("Enter no of books to be added : ");
                 int nBook=scan.nextInt();
@@ -176,11 +177,11 @@ public class Library {
                 break;
             case 6: showStudents();
                 break;
-            case 7: verification();
-                checkOut();
+            case 7: issueBook(verification());
                 break;
-            case 8: verification();
-                checkIn();
+            case 8: returnBook(verification());
+                break;
+            case 9: verification();
                 break;
             default: System.out.println("Invalid Input\nPress between 0 to 9");
         }
@@ -210,7 +211,7 @@ public class Library {
         System.out.print("Quantity you want to Add : ");
         int quantity=scan.nextInt();
         book[serial].bookQuantity+=quantity;
-        System.out.println("Quantity has been upgraded sucessfully");
+        System.out.println("Quantity has been upgraded successfully");
     }
     void search() {
         System.out.println("***************************************************************");
@@ -296,7 +297,7 @@ public class Library {
             students[i].displayStudent();
         }
     }
-    void verification() {
+    int verification() {
         System.out.print("Enter Student Id : ");
         scan.nextLine();
         String id=scan.nextLine();
@@ -308,19 +309,60 @@ public class Library {
             else {
                 if (students[i].libID.equals(id)) {
                     System.out.println("ID verified");
-                    students[i].displayStudent();
-                    break;
+                    students[i].displayOneStudent();
+                    return i;
                 }
                 else if (i == 49) {
                     System.out.println("ID doesn't exist");
                 }
             }
         }
+        return 401;
     }
-    void checkIn() {
-
+    void issueBook(int verification) {
+        if(verification!=401) {
+            int temp=students[verification].count();
+            if(temp<3) {
+                System.out.println();
+                serial = searchID();
+                if (book[serial].bookQuantity > 0) {
+                    book[serial].bookQuantity--;
+                    System.out.println("Book issued successfully");
+                    students[verification].issueBook(book[serial].bookID);
+                }
+                else {
+                    System.out.println("Book not available");
+                }
+            }
+            else {
+                System.out.println("Maximum no of book issued");
+            }
+        }
     }
-    void checkOut() {
+    void returnBook(int verification) {
+        if(verification!=401) {
+            if(students[verification].checkBook(book[serial].bookID)){
+                System.out.println();
+                serial=searchID();
+                book[serial].bookQuantity++;
+                System.out.println("Book returned successfully");
+                students[verification].returnBook(book[serial].bookID);
+            }
+            else{
+                System.out.println("Student has issued no such book");
+            }
+        }
+    }
 
+    public  static void main(String[]args) {
+        Library library=new Library();
+        System.out.println("********************Welcome to the Library!********************");
+        System.out.println("                Select From The Following Options:             ");
+        System.out.println("***************************************************************");
+        library.options();
+        if(library.choice==0||!library.access){
+            return;
+        }
+        library.control();
     }
 }
