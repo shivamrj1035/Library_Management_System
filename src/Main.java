@@ -1,13 +1,13 @@
 public class Main {
     public  static void main(String[]args) {
-        Operations op = new Operations();
+        Library library=new Library();
         System.out.println("********************Welcome to the Library!********************");
         System.out.println("                Select From The Following Options:             ");
         System.out.println("***************************************************************");
-        op.start();
-        op.options();
-        if(op.choice==0){
+        library.options();
+        if(library.choice==0||!library.access){
             return;
         }
+        library.control();
     }
 }
