@@ -374,9 +374,12 @@ public class Library {
                 System.out.println();
                 int serial=search_2();
                 if (book[serial].bookQuantity > 0) {
+                    System.out.print("Enter issue date(DD MM YYYY) : ");
+                    scan.nextLine();
+                    String issueDate=scan.nextLine();
                     book[serial].bookQuantity--;
                     System.out.println("Book issued successfully");
-                    students[verification].issueBook(book[serial].bookID);
+                    students[verification].issueBook(book[serial].bookID,issueDate);
                 }
                 else {
                     System.out.println("Book not available");
@@ -389,12 +392,18 @@ public class Library {
     }
     void returnBook(int verification) {
         if(verification!=401) {
+            int serial=search_2();
             if(students[verification].checkBook(book[serial].bookID)){
                 System.out.println();
-                int serial=search_2();
+                System.out.print("Enter return date(DD MM YYYY) : ");
+                scan.nextLine();
+                String returnDate=scan.nextLine();
                 book[serial].bookQuantity++;
+                int days=students[verification].returnBook(book[serial].bookID,returnDate);
+                if(days>15) {
+                    System.out.println(students[verification].studentName+" is late for returning book by "+(days-15)+" days\nFine : " +((days-15)*2));
+                }
                 System.out.println("Book returned successfully");
-                students[verification].returnBook(book[serial].bookID);
             }
             else{
                 System.out.println("Student has issued no such book");

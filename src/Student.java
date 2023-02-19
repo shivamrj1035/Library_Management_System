@@ -5,6 +5,8 @@ public class Student {
     String studentName,enrollmentNumber;
     String libID;
     int[] issuedBookID={0,0,0};
+    String [] issueDate={null,null,null};
+    String [] returnDate={null,null,null};
     static int serial=1001;
     Student(String studentName,String enrollmentNumber) {
         libID="S"+serial++;
@@ -66,10 +68,11 @@ public class Student {
         }
         return (countIssuedBook);
     }
-    void issueBook(int id) {
+    void issueBook(int id,String date) {
         for(int i=0;i<3;i++) {
             if(issuedBookID[i]==0) {
                 issuedBookID[i]=id;
+                issueDate[i]=date;
                 break;
             }
         }
@@ -82,12 +85,64 @@ public class Student {
         }
         return false;
     }
-    void returnBook(int id) {
+    int returnBook(int id,String date) {
         for(int i=0;i<3;i++) {
             if(issuedBookID[i]==id) {
                 issuedBookID[i]=0;
-                break;
+                returnDate[i]=date;
+                int days= calculateNoOfDays(i);
+                returnDate[i]=null;
+                return(days);
             }
         }
+        return 0;
+    }
+    int calculateNoOfDays(int i) {
+        int days;
+        String [] issue=issueDate[i].split(" ");
+        int issueDay=Integer.parseInt(issue[0]);
+        int issueMonth=Integer.parseInt(issue[1]);
+        int issueYear=Integer.parseInt(issue[2]);
+        String [] returnD=returnDate[i].split(" ");
+        int returnDay=Integer.parseInt(returnD[0]);
+        int returnMonth=Integer.parseInt(returnD[1]);
+        int returnYear=Integer.parseInt(returnD[2]);
+        boolean issueLeapYear= (issueYear%4==0 && issueYear%100!=0)||(issueDay%400==0);
+        if(issueYear==returnYear) {
+            if (issueMonth == returnMonth) {
+                days = returnDay - issueDay;
+            }
+            else {
+                int issueMonthDays=0;
+                switch (issueMonth) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                        issueMonthDays = 31 - issueDay;
+                        break;
+                    case 2:
+                        if (issueLeapYear) {
+                            issueMonthDays = 29 - issueDay;
+                        } else {
+                            issueMonthDays = 28 - issueDay;
+                        }
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        issueMonthDays = 30 - issueDay;
+                        break;
+                }
+                days=returnDay+issueMonthDays;
+            }
+        }
+        else {
+                days=returnDay+ 31 - issueDay;
+        }
+        return days;
     }
 }
