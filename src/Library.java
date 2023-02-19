@@ -142,17 +142,17 @@ public class Library {
     int choice_2,serial;
     void options_2() {
         System.out.println("\n***************************************************************");
-        System.out.println("Press 0 to return to the login menu.");
-        System.out.println("Press 1 to Add new Book.");
-        System.out.println("Press 2 to Upgrade Quantity of a Book.");
-        System.out.println("Press 3 to Search a Book.");
-        System.out.println("Press 4 to Show All Books.");
-        System.out.println("Press 5 to Register Student.");
-        System.out.println("Press 6 to Show All Registered Students.");
-        System.out.println("Press 7 to issue Book. ");
+        System.out.println("Press 0 to return to the login menu");
+        System.out.println("Press 1 to Add new Book");
+        System.out.println("Press 2 to Upgrade Quantity of a Book");
+        System.out.println("Press 3 to Search a Book");
+        System.out.println("Press 4 to Show All Books");
+        System.out.println("Press 5 to Register Student");
+        System.out.println("Press 6 to Show All Registered Students");
+        System.out.println("Press 7 to issue Book");
         System.out.println("Press 8 to return Book");
         System.out.println("Press 9 to search a student");
-        System.out.println("Press 10 to Show All Registered Librarians.");
+        System.out.println("Press 10 to Show All Registered Librarians");
         System.out.println("***************************************************************");
         choice_2= scan.nextInt();
         switch (choice_2) {
@@ -216,9 +216,9 @@ public class Library {
     void search() {
         System.out.println("***************************************************************");
         System.out.println("Press 1 to Search by Book ID");
-        System.out.println("Press 2 to Search by Book Name.");
-        System.out.println("Press 3 to Search by Author Name.");
-        System.out.println("Press 4 to Search by publisher Name.");
+        System.out.println("Press 2 to Search by Book Name");
+        System.out.println("Press 3 to Search by Author Name");
+        System.out.println("Press 4 to Search by publisher Name");
         System.out.println("***************************************************************");
         int choice_search= scan.nextInt();
         switch (choice_search) {
@@ -348,7 +348,7 @@ public class Library {
     int search_2() {
         System.out.println("***************************************************************");
         System.out.println("Press 1 to Search by Book ID");
-        System.out.println("Press 2 to Search by Book Name.");
+        System.out.println("Press 2 to Search by Book Name");
         System.out.println("***************************************************************");
         int choice_search= scan.nextInt();
         switch (choice_search) {
