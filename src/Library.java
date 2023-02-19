@@ -19,16 +19,16 @@ public class Library {
         for(int i=5;i<50;i++){
             students[i]=new Student();
         }
-        book[0]=new Books("Java The Complete Reference","Herbert Schildt",5);
-        book[1]=new Books("Core Java An Integrated Approach","Dr R Nageswara Rao",5);
-        book[2]=new Books("Core Java Volume I-Fundamentals","Cay S. Horstmann",5);
-        book[3]=new Books("The Java Programming Language","James Gosling",5);
-        book[4]=new Books("Higher Engineering Mathematics","Dr B S Grewal",5);
-        book[5]=new Books("Engineering Physics","G Vijayakumari",5);
-        book[6]=new Books("Software Engineering","Roger S. Pressman",5);
-        book[7]=new Books("Beginning Arduino","Michael McRobetrs",5);
-        book[8]=new Books("Environmental Science","Dr. B.R. Shah",5);
-        book[9]=new Books("Physics-2","Nimish Das",5);
+        book[0]=new Books("Java The Complete Reference","Herbert Schildt","Tata McGrawHill",5);
+        book[1]=new Books("Core Java An Integrated Approach","Dr R Nageswara Rao","Dream tech Press",5);
+        book[2]=new Books("Core Java Volume I-Fundamentals","Cay S. Horstmann","Pearson India",5);
+        book[3]=new Books("The Java Programming Language","James Gosling","Addison Wesley",5);
+        book[4]=new Books("Higher Engineering Mathematics","Dr B S Grewal","Khanna Publisher",5);
+        book[5]=new Books("Engineering Physics","G Vijayakumari","Vikas Publishing House",5);
+        book[6]=new Books("Software Engineering","Roger S. Pressman","Tata McGrawHill",5);
+        book[7]=new Books("Beginning Arduino","Michael McRobetrs","Apress",5);
+        book[8]=new Books("Environmental Science","Dr. B.R. Shah","Mahajan Publishing House",5);
+        book[9]=new Books("Physics-2","Nimish Das","Books India",5);
         for(int i=10;i<100;i++){
             book[i]=new Books();
         }
@@ -218,23 +218,27 @@ public class Library {
         System.out.println("Press 1 to Search by Book ID");
         System.out.println("Press 2 to Search by Book Name.");
         System.out.println("Press 3 to Search by Author Name.");
+        System.out.println("Press 4 to Search by publisher Name.");
         System.out.println("***************************************************************");
         int choice_search= scan.nextInt();
         switch (choice_search) {
             case 1 : serial = searchID();
                 break;
-            case 2 : serial = searchName();
+            case 2 : serial=searchName();
                 break;
-            case 3 : serial = searchAuthor();
+            case 3 : searchAuthor();
                 break;
-            default: System.out.println("Invalid Input\nPress between 1 to 3");
+            case 4 : searchPublisher();
+                break;
+            default: System.out.println("Invalid Input\nPress between 1 to 4");
                 search();
         }
-        if(serial==401){
-            System.out.println("No such book found in the library");
-        }
-        else {
-            book[serial].displayOneBook();
+        if(choice_search==1 || choice_search==2) {
+            if (serial == 401) {
+                System.out.println("No such book found in the library");
+            } else {
+                book[serial].displayOneBook();
+            }
         }
     }
     int searchID() {
@@ -258,7 +262,7 @@ public class Library {
         int i=0;
         for(;i<100;i++){
             if(book[i].bookName==null){
-                return 401;//error code
+                return 401;
             }
             else if(book[i].bookName.equalsIgnoreCase(enteredBookName)){
                 break;
@@ -266,20 +270,35 @@ public class Library {
         }
         return i;
     }
-    int searchAuthor() {
+    void searchAuthor() {
         System.out.print("Enter Author Name : ");
         scan.nextLine();
         String enteredAuthorName=scan.nextLine();
-        int i=0;
-        for(;i<100;i++) {
+        int i;
+        for(i=0;i<100;i++) {
             if(book[i].authorName==null){
-                return 401;//error code
-            }
-            else if(book[i].authorName.equalsIgnoreCase(enteredAuthorName)){
+                System.out.println("No such book found in the library");
                 break;
             }
+            else if(book[i].authorName.equalsIgnoreCase(enteredAuthorName)) {
+                book[i].displayOneBook();
+            }
         }
-        return i;
+    }
+    void searchPublisher() {
+        System.out.print("Enter Publisher : ");
+        scan.nextLine();
+        String enteredPublisher=scan.nextLine();
+        int i=0;
+        for(;i<100;i++) {
+            if(book[i].publisher==null){
+                System.out.println("No such book found in the library");
+                break;
+            }
+            else if(book[i].publisher.equalsIgnoreCase(enteredPublisher)) {
+                book[i].displayOneBook();
+            }
+        }
     }
     void registerStudent(){
         for(int i=0;i<50;i++){
@@ -320,12 +339,34 @@ public class Library {
         }
         return 401;
     }
+    int search_2() {
+        System.out.println("***************************************************************");
+        System.out.println("Press 1 to Search by Book ID");
+        System.out.println("Press 2 to Search by Book Name.");
+        System.out.println("***************************************************************");
+        int choice_search= scan.nextInt();
+        switch (choice_search) {
+            case 1 : serial = searchID();
+                break;
+            case 2 : serial=searchName();
+                break;
+            default: System.out.println("Invalid Input\nPress between 1 to 2");
+                search_2();
+        }
+        if(serial==401){
+            System.out.println("No such book found in the library");
+        }
+        else {
+            book[serial].displayOneBook();
+        }
+        return  serial;
+    }
     void issueBook(int verification) {
         if(verification!=401) {
             int temp=students[verification].count();
             if(temp<3) {
                 System.out.println();
-                serial = searchID();
+                int serial=search_2();
                 if (book[serial].bookQuantity > 0) {
                     book[serial].bookQuantity--;
                     System.out.println("Book issued successfully");
@@ -344,7 +385,7 @@ public class Library {
         if(verification!=401) {
             if(students[verification].checkBook(book[serial].bookID)){
                 System.out.println();
-                serial=searchID();
+                int serial=search_2();
                 book[serial].bookQuantity++;
                 System.out.println("Book returned successfully");
                 students[verification].returnBook(book[serial].bookID);
