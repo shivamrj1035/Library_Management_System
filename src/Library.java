@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Library {
     Scanner scan=new Scanner(System.in);
     int choice,count;
-    Librarian[] librarians=new Librarian[5];
-    Student[] students=new Student[50];
-    Books[] book=new Books[100];
+    static Librarian[] librarians=new Librarian[5];
+    static Student[] students=new Student[50];
+    static Books[] book=new Books[100];
     Library() {
         librarians[0]=new Librarian("John20","John Abraham","John20","20");
         for(int a=1;a<5;a++) {
@@ -98,7 +98,7 @@ public class Library {
         if(choice_2==0) {
             options();
         }
-        else if(choice_2==9) {
+        else if(choice_2==10) {
             showLibrarians();
             control();
         }
@@ -398,6 +398,14 @@ public class Library {
             }
             else{
                 System.out.println("Student has issued no such book");
+            }
+        }
+    }
+    static void printIssuedBooks(int issue) {
+        for(int j=0;j<100;j++) {
+            if(book[j].bookID==issue) {
+                System.out.println("Book ID : "+book[j].bookID+"     Book Name :"+book[j].bookName);
+                break;
             }
         }
     }

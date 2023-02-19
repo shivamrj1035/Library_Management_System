@@ -45,11 +45,11 @@ public class Student {
     void displayOneStudent() {
         System.out.println("Id : "+libID+"\nEnrollment Number : "+enrollmentNumber+"\nName : "+studentName);
         System.out.println();
-        System.out.println("Issued Book ID");
+        System.out.println("Issued Book");
         int count=0;
         for(int i=0;i<3;i++) {
             if(issuedBookID[i]!=0) {
-                System.out.println(issuedBookID[i]);
+                Library.printIssuedBooks(issuedBookID[i]);
                 count++;
             }
         }
