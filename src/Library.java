@@ -221,13 +221,14 @@ public class Library {
         System.out.println("***************************************************************");
         int choice_search= scan.nextInt();
         switch (choice_search) {
-            case 1 -> serial = searchID();
-            case 2 -> serial = searchName();
-            case 3 -> serial = searchAuthor();
-            default -> {
-                System.out.println("Invalid Input\nPress between 1 to 3");
+            case 1 : serial = searchID();
+                break;
+            case 2 : serial = searchName();
+                break;
+            case 3 : serial = searchAuthor();
+                break;
+            default: System.out.println("Invalid Input\nPress between 1 to 3");
                 search();
-            }
         }
         if(serial==401){
             System.out.println("No such book found in the library");

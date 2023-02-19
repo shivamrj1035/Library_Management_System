@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="18th Feb &#10;Mansi &#10;Akash">
+    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="18th Feb &#10;complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Books.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librarian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +39,8 @@
     "last_opened_file_path": "D:/Study",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -83,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676731244657</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="18th Feb &#10;complete">
+      <created>1676735341470</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676735341470</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,7 +104,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="17th Feb College" />
     <MESSAGE value="18th Feb &#10;Mansi &#10;Akash" />
-    <option name="LAST_COMMIT_MESSAGE" value="18th Feb &#10;Mansi &#10;Akash" />
+    <MESSAGE value="18th Feb &#10;complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="18th Feb &#10;complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
