@@ -222,16 +222,14 @@ public class Library {
         System.out.println("***************************************************************");
         int choice_search= scan.nextInt();
         switch (choice_search) {
-            case 1 : serial = searchID();
-                break;
-            case 2 : serial=searchName();
-                break;
-            case 3 : searchAuthor();
-                break;
-            case 4 : searchPublisher();
-                break;
-            default: System.out.println("Invalid Input\nPress between 1 to 4");
+            case 1 -> serial = searchID();
+            case 2 -> serial = searchName();
+            case 3 -> searchAuthor();
+            case 4 -> searchPublisher();
+            default -> {
+                System.out.println("Invalid Input\nPress between 1 to 4");
                 search();
+            }
         }
         if(choice_search==1 || choice_search==2) {
             if (serial == 401) {
@@ -275,13 +273,17 @@ public class Library {
         scan.nextLine();
         String enteredAuthorName=scan.nextLine();
         int i;
+        int count=0;
         for(i=0;i<100;i++) {
             if(book[i].authorName==null){
-                System.out.println("No such book found in the library");
+                if(count==0) {
+                    System.out.println("No such book found in the library");
+                }
                 break;
             }
             else if(book[i].authorName.equalsIgnoreCase(enteredAuthorName)) {
                 book[i].displayOneBook();
+                count++;
             }
         }
     }
@@ -290,13 +292,17 @@ public class Library {
         scan.nextLine();
         String enteredPublisher=scan.nextLine();
         int i=0;
+        int count=0;
         for(;i<100;i++) {
-            if(book[i].publisher==null){
-                System.out.println("No such book found in the library");
+            if(book[i].publisher==null) {
+                if(count == 0) {
+                    System.out.println("No such book found in the library");
+                }
                 break;
             }
             else if(book[i].publisher.equalsIgnoreCase(enteredPublisher)) {
                 book[i].displayOneBook();
+                count++;
             }
         }
     }
@@ -346,12 +352,12 @@ public class Library {
         System.out.println("***************************************************************");
         int choice_search= scan.nextInt();
         switch (choice_search) {
-            case 1 : serial = searchID();
-                break;
-            case 2 : serial=searchName();
-                break;
-            default: System.out.println("Invalid Input\nPress between 1 to 2");
+            case 1 -> serial = searchID();
+            case 2 -> serial = searchName();
+            default -> {
+                System.out.println("Invalid Input\nPress between 1 to 2");
                 search_2();
+            }
         }
         if(serial==401){
             System.out.println("No such book found in the library");
