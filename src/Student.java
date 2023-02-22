@@ -121,6 +121,7 @@ public class Student {
                 case 7:
                 case 8:
                 case 10:
+                case 12:
                     issueMonthDays = 31 - issueDay;
                     break;
                 case 2:
@@ -147,6 +148,7 @@ public class Student {
                             case 7:
                             case 8:
                             case 10:
+                            case 12:
                                 extraMonthDays += 31;
                                 break;
                             case 2:
@@ -167,40 +169,9 @@ public class Student {
                 }
             }
             else {
-                int differenceMonths=(12-issueMonth)+(returnYear-issueYear-1)*12+returnMonth;
-                for(int temp=issueMonth+1;temp<differenceMonths;temp++) {
-                    int month=temp;
-                    int year=issueYear;
-                    boolean LeapYear=issueLeapYear;
-                    if(month>12) {
-                        month -= 12;
-                        year++;
-                        LeapYear= (year%4==0 && year%100!=0)||(year%400==0);
-                    }
-                    switch (month) {
-                        case 1:
-                        case 3:
-                        case 5:
-                        case 7:
-                        case 8:
-                        case 10:
-                            extraMonthDays += 31;
-                            break;
-                        case 2:
-                            if (LeapYear) {
-                                extraMonthDays += 29;
-                            } else {
-                                extraMonthDays += 28;
-                            }
-                            break;
-                        case 4:
-                        case 6:
-                        case 9:
-                        case 11:
-                            extraMonthDays += 30;
-                            break;
-                    }
-                }
+                int years=returnYear-issueYear-1;
+                int extraMonth=(12-issueMonth)+returnMonth-1;
+                extraMonthDays=(((extraMonth/12)+years)*365)+(extraMonth%12)*30;
             }
             days=returnDay+issueMonthDays+extraMonthDays;
         }
