@@ -93,10 +93,14 @@ public class Library {
             }
         }
     }
-    void control(){
+   void control() {
         options_2();
         if(choice_2==0) {
             options();
+            if(choice==0||!access){
+                return;
+            }
+            control();
         }
         else if(choice_2==10) {
             showLibrarians();
