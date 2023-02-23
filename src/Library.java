@@ -100,12 +100,11 @@ public class Library {
             if(choice==0||!access){
                 return;
             }
-            control();
         }
         else if(choice_2==10) {
             showLibrarians();
-            control();
         }
+       control();
     }
     int s;
     void showLibrarians() {
