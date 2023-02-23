@@ -110,63 +110,15 @@ public class Student {
         boolean issueLeapYear= (issueYear%4==0 && issueYear%100!=0)||(issueYear%400==0);
         boolean returnLeapYear= (returnYear%4==0 && returnYear%100!=0)||(returnYear%400==0);
         if (issueMonth == returnMonth && issueYear==returnYear) {
-            days = returnDay - issueDay;
+            days = returnDay - issueDay +1;
         }
         else{
-            int issueMonthDays=0;
             int extraMonthDays=0;
-            switch (issueMonth) {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    issueMonthDays = 31 - issueDay;
-                    break;
-                case 2:
-                    if (issueLeapYear) {
-                        issueMonthDays = 29 - issueDay;
-                    } else {
-                        issueMonthDays = 28 - issueDay;
-                    }
-                    break;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    issueMonthDays = 30 - issueDay;
-                    break;
-            }
-            issueMonthDays+=1;
+            int issueMonthDays=calculateDaysOfMonths(issueMonth,issueLeapYear);
             if(issueYear==returnYear) {
                 if (issueMonth+1 != returnMonth) {
                     for (int month = issueMonth+1; month < returnMonth; month++) {
-                        switch (month) {
-                            case 1:
-                            case 3:
-                            case 5:
-                            case 7:
-                            case 8:
-                            case 10:
-                            case 12:
-                                extraMonthDays += 31;
-                                break;
-                            case 2:
-                                if (issueLeapYear) {
-                                    extraMonthDays += 29;
-                                } else {
-                                    extraMonthDays += 28;
-                                }
-                                break;
-                            case 4:
-                            case 6:
-                            case 9:
-                            case 11:
-                                extraMonthDays += 30;
-                                break;
-                        }
+                        extraMonthDays+=calculateDaysOfMonths(month,issueLeapYear);
                     }
                 }
             }
@@ -181,60 +133,42 @@ public class Student {
                     }
                 }
                 for (int month = issueMonth+1; month <=12; month++) {
-                    switch (month) {
-                        case 1:
-                        case 3:
-                        case 5:
-                        case 7:
-                        case 8:
-                        case 10:
-                        case 12:
-                            extraMonthDays += 31;
-                            break;
-                        case 2:
-                            if (issueLeapYear) {
-                                extraMonthDays += 29;
-                            } else {
-                                extraMonthDays += 28;
-                            }
-                            break;
-                        case 4:
-                        case 6:
-                        case 9:
-                        case 11:
-                            extraMonthDays += 30;
-                            break;
-                    }
+                    extraMonthDays+=calculateDaysOfMonths(month,issueLeapYear);
                 }
                 for (int month = 1; month <returnMonth; month++) {
-                    switch (month) {
-                        case 1:
-                        case 3:
-                        case 5:
-                        case 7:
-                        case 8:
-                        case 10:
-                        case 12:
-                            extraMonthDays += 31;
-                            break;
-                        case 2:
-                            if (returnLeapYear) {
-                                extraMonthDays += 29;
-                            } else {
-                                extraMonthDays += 28;
-                            }
-                            break;
-                        case 4:
-                        case 6:
-                        case 9:
-                        case 11:
-                            extraMonthDays += 30;
-                            break;
-                    }
+                    extraMonthDays+=calculateDaysOfMonths(month,returnLeapYear);
                 }
             }
             days=returnDay+issueMonthDays+extraMonthDays;
         }
         return days;
+    }
+    int calculateDaysOfMonths(int month,boolean leapYear) {
+        int day=0;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                day += 31;
+                break;
+            case 2:
+                if (leapYear) {
+                    day += 29;
+                } else {
+                    day+= 28;
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                day += 30;
+                break;
+        }
+        return day;
     }
 }
