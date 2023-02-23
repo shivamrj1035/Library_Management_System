@@ -108,6 +108,7 @@ public class Student {
         int returnMonth=Integer.parseInt(returnD[1]);
         int returnYear=Integer.parseInt(returnD[2]);
         boolean issueLeapYear= (issueYear%4==0 && issueYear%100!=0)||(issueYear%400==0);
+        boolean returnLeapYear= (returnYear%4==0 && returnYear%100!=0)||(returnYear%400==0);
         if (issueMonth == returnMonth && issueYear==returnYear) {
             days = returnDay - issueDay;
         }
@@ -138,6 +139,7 @@ public class Student {
                     issueMonthDays = 30 - issueDay;
                     break;
             }
+            issueMonthDays+=1;
             if(issueYear==returnYear) {
                 if (issueMonth+1 != returnMonth) {
                     for (int month = issueMonth+1; month < returnMonth; month++) {
@@ -170,8 +172,66 @@ public class Student {
             }
             else {
                 int years=returnYear-issueYear-1;
-                int extraMonth=(12-issueMonth)+returnMonth-1;
-                extraMonthDays=(((extraMonth/12)+years)*365)+(extraMonth%12)*30;
+                for(int year=1;year<=years;year++) {
+                    if(((issueYear+year)%4==0 && (issueYear+year)%100!=0)||((issueYear+year)%400==0)) {
+                        extraMonthDays+=366;
+                    }
+                    else {
+                        extraMonthDays+=365;
+                    }
+                }
+                for (int month = issueMonth+1; month <=12; month++) {
+                    switch (month) {
+                        case 1:
+                        case 3:
+                        case 5:
+                        case 7:
+                        case 8:
+                        case 10:
+                        case 12:
+                            extraMonthDays += 31;
+                            break;
+                        case 2:
+                            if (issueLeapYear) {
+                                extraMonthDays += 29;
+                            } else {
+                                extraMonthDays += 28;
+                            }
+                            break;
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11:
+                            extraMonthDays += 30;
+                            break;
+                    }
+                }
+                for (int month = 1; month <returnMonth; month++) {
+                    switch (month) {
+                        case 1:
+                        case 3:
+                        case 5:
+                        case 7:
+                        case 8:
+                        case 10:
+                        case 12:
+                            extraMonthDays += 31;
+                            break;
+                        case 2:
+                            if (returnLeapYear) {
+                                extraMonthDays += 29;
+                            } else {
+                                extraMonthDays += 28;
+                            }
+                            break;
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11:
+                            extraMonthDays += 30;
+                            break;
+                    }
+                }
             }
             days=returnDay+issueMonthDays+extraMonthDays;
         }
