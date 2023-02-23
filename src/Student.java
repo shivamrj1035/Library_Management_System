@@ -51,7 +51,12 @@ public class Student {
         int count=0;
         for(int i=0;i<3;i++) {
             if(issuedBookID[i]!=0) {
-                Library.printIssuedBooks(issuedBookID[i]);
+                for(int j=0;j<100;j++) {
+                    if(Library.book[j].bookID==issuedBookID[i]) {
+                        System.out.println("Book ID : "+ Library.book[j].bookID+"     Book Name :"+ Library.book[j].bookName);
+                        break;
+                    }
+                }
                 count++;
             }
         }
@@ -158,7 +163,8 @@ public class Student {
             case 2:
                 if (leapYear) {
                     day += 29;
-                } else {
+                }
+                else {
                     day+= 28;
                 }
                 break;

@@ -40,7 +40,7 @@ public class Books {
         System.out.println(" ID   "+"             Book Name               "+"       Author Name       "+"        Publisher       "+"     Quantity ");
     }
     void displayOneBook() {
-        System.out.println("ID          : "+bookID+"\nBook Name   : "+bookName+"\nAuthor Name : "+authorName+"\nPublisher  : "+publisher+"\nQuantity    : "+bookQuantity+"\n");
+        System.out.println("ID          : "+bookID+"\nBook Name   : "+bookName+"\nAuthor Name : "+authorName+"\nPublisher  : "+publisher);
     }
     void spaceBookName() {
         int space=39-bookName.length();

@@ -413,14 +413,6 @@ public class Library {
             }
         }
     }
-    static void printIssuedBooks(int issue) {
-        for(int j=0;j<100;j++) {
-            if(book[j].bookID==issue) {
-                System.out.println("Book ID : "+book[j].bookID+"     Book Name :"+book[j].bookName);
-                break;
-            }
-        }
-    }
 
     public  static void main(String[]args) {
         Library library=new Library();
