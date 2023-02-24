@@ -23,8 +23,32 @@ public class Librarian {
         System.out.println("You have successfully Signed Up \nYour login Id is : "+librarianId);
     }
     void enterPassword() {
-        System.out.print("Enter Password : ");
-        String pass=scan.nextLine();
+        String pass;
+        for(;;) {
+            System.out.print("Enter Password : ");
+            pass = scan.nextLine();
+            int countDigit=0,countSpecial=0,countLowercase=0,countUppercase=0;
+            for(int i=0;i<pass.length();i++) {
+                if(pass.charAt(i)>='0' && pass.charAt(i)<='9') {
+                    countDigit++;
+                }
+                else if (pass.charAt(i)>='a' && pass.charAt(i)<='z') {
+                    countLowercase++;
+                }
+                else if (pass.charAt(i)>='A' && pass.charAt(i)<='Z') {
+                    countUppercase++;
+                }
+                else {
+                    countSpecial++;
+                }
+            }
+            if(pass.length()>=8 && countDigit>=1 && countLowercase>=1 && countUppercase>=1 && countSpecial >=1) {
+                break;
+            }
+            else {
+                System.out.println("Please enter a password having minimum length 8 and includes at least one lowercase letter,Uppercase letter,one number and one special character");
+            }
+        }
         System.out.print("Confirm Password : ");
         String confirmPass=scan.nextLine();
         if(pass.equals(confirmPass)){
