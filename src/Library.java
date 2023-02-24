@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Library {
-    Scanner scan=new Scanner(System.in);
+    static Scanner scan=new Scanner(System.in);
     Random random = new Random();
     int choice,count;
     static Librarian[] librarians=new Librarian[5];
@@ -17,7 +17,7 @@ public class Library {
         students[2]=new Student("Aditya Singh","22002171210065");
         students[3]=new Student("Patel Hensy","22002171310082");
         students[4]=new Student("Bhatt Shreeom","22002171310008");
-        for(int i=5;i<50;i++){
+        for(int i=5;i<50;i++) {
             students[i]=new Student();
         }
         book[0]=new Books("Java The Complete Reference","Herbert Schildt","Tata McGrawHill",5);
@@ -30,7 +30,7 @@ public class Library {
         book[7]=new Books("Beginning Arduino","Michael McRobetrs","Apress",5);
         book[8]=new Books("Environmental Science","Dr. B.R. Shah","Mahajan Publishing House",5);
         book[9]=new Books("Physics-2","Nimish Das","Books India",5);
-        for(int i=10;i<100;i++){
+        for(int i=10;i<100;i++) {
             book[i]=new Books();
         }
     }
@@ -44,7 +44,7 @@ public class Library {
         System.out.println("***************************************************************");
         choice=scan.nextInt();
         scan.nextLine();
-        switch (choice){
+        switch (choice) {
             case 0 : return;
             case 1 : signUp();
                 options();
@@ -82,12 +82,14 @@ public class Library {
                     scan.nextLine();
                     login();
                     break;
-                } else {
+                }
+                else {
                     librarians[i].login(enteredUserId, enteredPassword);
                     if (librarians[i].access) {
                         access = true;
                         break;
-                    } else if (i == 4) {
+                    }
+                    else if (i == 4) {
                         System.out.println("Incorrect User Id or Password");
                         count++;
                         login();
