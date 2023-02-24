@@ -20,7 +20,7 @@ public class Librarian {
         age=scan.nextLine();
         enterPassword();
         createLibrarianID();
-        System.out.println("You have successfully Signed Up \n Your login Id is : "+librarianId);
+        System.out.println("You have successfully Signed Up \nYour login Id is : "+librarianId);
     }
     void enterPassword() {
         System.out.print("Enter Password : ");

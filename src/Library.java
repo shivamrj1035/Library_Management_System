@@ -98,6 +98,9 @@ public class Library {
         if(choice_2==0) {
             options();
             if(choice==0||!access){
+                if(choice==0) {
+                    System.out.println("***************** Thanks for using our system *****************");
+                }
                 return;
             }
         }
@@ -286,6 +289,7 @@ public class Library {
             }
             else if(book[i].authorName.equalsIgnoreCase(enteredAuthorName)) {
                 book[i].displayOneBook();
+                System.out.println();
                 count++;
             }
         }
@@ -305,6 +309,7 @@ public class Library {
             }
             else if(book[i].publisher.equalsIgnoreCase(enteredPublisher)) {
                 book[i].displayOneBook();
+                System.out.println();
                 count++;
             }
         }
@@ -348,34 +353,12 @@ public class Library {
         }
         return 401;
     }
-    int search_2() {
-        System.out.println("***************************************************************");
-        System.out.println("Press 1 to Search by Book ID");
-        System.out.println("Press 2 to Search by Book Name");
-        System.out.println("***************************************************************");
-        int choice_search= scan.nextInt();
-        switch (choice_search) {
-            case 1 -> serial = searchID();
-            case 2 -> serial = searchName();
-            default -> {
-                System.out.println("Invalid Input\nPress between 1 to 2");
-                search_2();
-            }
-        }
-        if(serial==401){
-            System.out.println("No such book found in the library");
-        }
-        else {
-            book[serial].displayOneBook();
-        }
-        return  serial;
-    }
     void issueBook(int verification) {
         if(verification!=401) {
             int temp=students[verification].count();
             if(temp<3) {
                 System.out.println();
-                int serial=search_2();
+                int serial=searchID();
                 if (book[serial].bookQuantity > 0) {
                     System.out.print("Enter issue date(DD MM YYYY) : ");
                     scan.nextLine();
@@ -395,7 +378,8 @@ public class Library {
     }
     void returnBook(int verification) {
         if(verification!=401) {
-            int serial=search_2();
+            System.out.println();
+            int serial=searchID();
             if(students[verification].checkBook(book[serial].bookID)){
                 System.out.println();
                 System.out.print("Enter return date(DD MM YYYY) : ");
@@ -416,11 +400,12 @@ public class Library {
 
     public  static void main(String[]args) {
         Library library=new Library();
-        System.out.println("********************Welcome to the Library!********************");
-        System.out.println("                Select From The Following Options:             ");
-        System.out.println("***************************************************************");
+        System.out.println("******************** Welcome to the Library ********************");
         library.options();
         if(library.choice==0||!library.access){
+            if(library.choice==0) {
+                System.out.println("***************** Thanks for using our system *****************");
+            }
             return;
         }
         library.control();
