@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="24th feb&#10;issue return exception solved">
+    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="25th feb&#10;password validation added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librarian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +241,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677235343162</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="24th feb&#10;Head librarian dilip">
+      <created>1677237101521</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1677237101521</updated>
+    </task>
+    <task id="LOCAL-00026" summary="25th feb&#10;password validation added">
+      <created>1677265863729</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1677265863729</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,7 +290,9 @@
     <MESSAGE value="24th feb&#10;optimization 123" />
     <MESSAGE value="24th feb&#10;HOD suggestions added" />
     <MESSAGE value="24th feb&#10;issue return exception solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="24th feb&#10;issue return exception solved" />
+    <MESSAGE value="24th feb&#10;Head librarian dilip" />
+    <MESSAGE value="25th feb&#10;password validation added" />
+    <option name="LAST_COMMIT_MESSAGE" value="25th feb&#10;password validation added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

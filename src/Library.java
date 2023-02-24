@@ -1,13 +1,14 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Library {
     Scanner scan=new Scanner(System.in);
+    Random random = new Random();
     int choice,count;
     static Librarian[] librarians=new Librarian[5];
     static Student[] students=new Student[50];
     static Books[] book=new Books[100];
     Library() {
-        librarians[0]=new Librarian("Dilip42","Dilip Udhani","Dilip@42","42");
+        librarians[0]=new Librarian("Akash Rai","Akash@04","18");
         for(int a=1;a<5;a++) {
             librarians[a]=new Librarian();
         }
@@ -68,6 +69,7 @@ public class Library {
         String enteredUserId = scan.nextLine();
         System.out.print("Enter Password : ");
         String enteredPassword = scan.nextLine();
+        captcha();
         if (count == 2) {
             System.out.println("Account locked for 1 hour");
             access = false;
@@ -77,6 +79,7 @@ public class Library {
                 if (librarians[i].librarianId == null) {
                     System.out.println("Incorrect User Id or Password");
                     count++;
+                    scan.nextLine();
                     login();
                     break;
                 } else {
@@ -91,6 +94,31 @@ public class Library {
                     }
                 }
             }
+        }
+    }
+    void captcha() {
+        int a=random.nextInt(100);//creates a random variable between 0 and 99
+        int b=random.nextInt(10);//creates a random variable between 0 and 9
+        int operator=random.nextInt(3);
+        char operator_sign;
+        int answer;
+        if (operator == 1) {
+            operator_sign = '-';
+            answer = a - b;
+        }
+        else if(operator == 2) {
+            operator_sign = '+';
+            answer = a + b;
+        }
+        else {
+            operator_sign = '*';
+            answer = a * b;
+        }
+        System.out.print("CAPTCHA --> "+a+operator_sign+b+" = ");
+        int ans=scan.nextInt();
+        if(answer!=ans) {
+            System.out.println("Entered Captcha answer is incorrect\n");
+            captcha();
         }
     }
    void control() {

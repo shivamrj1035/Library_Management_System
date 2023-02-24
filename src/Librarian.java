@@ -4,11 +4,11 @@ public class Librarian {
     Scanner scan=new Scanner(System.in);
     String password,fullName,librarianId,age;
     boolean access;
-    Librarian(String librarianId,String fullName,String password,String age) {
-        this.librarianId=librarianId;
+    Librarian(String fullName,String password,String age) {
         this.fullName=fullName;
         this.password=password;
         this.age=age;
+        createLibrarianID();
     }
     Librarian(){
 
@@ -61,7 +61,8 @@ public class Librarian {
     }
     void createLibrarianID() {
         String[] name=fullName.split(" ");
-        librarianId=name[0].concat(age);
+        librarianId=name[0]+"@";
+        librarianId=librarianId.concat(age);
     }
     void login(String enteredUserId,String enteredPassword) {
         if(enteredUserId.equals(librarianId)&&enteredPassword.equals(password)) {
