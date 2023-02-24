@@ -350,11 +350,27 @@ public class Library {
         }
     }
     void registerStudent(){
-        for(int i=0;i<50;i++){
-            if(students[i].studentName==null){
-                students[i].registration();
-                System.out.println("Student registered successfully");
+        System.out.print("Student enrollment number : ");
+        scan.nextLine();
+        String enrollmentNumber=scan.nextLine();
+        int check=0;
+        for(int i=0;i<50;i++) {
+            if(students[i].studentName==null) {
                 break;
+            }
+            else if(students[i].enrollmentNumber.equals(enrollmentNumber)) {
+                System.out.println("Student already registered ");
+                check=1;
+                break;
+            }
+        }
+        if(check==0) {
+            for (int i = 0; i < 50; i++) {
+                if(students[i].studentName==null) {
+                    students[i].registration(enrollmentNumber);
+                    System.out.println("Student registered successfully");
+                    break;
+                }
             }
         }
     }

@@ -16,14 +16,12 @@ public class Student {
     Student() {
 
     }
-    void registration() {
+    void registration(String enrollmentNumber) {
+        this.enrollmentNumber=enrollmentNumber;
         libID="S"+serial;
         serial++;
         System.out.print("Student name : ");
         studentName=scan.nextLine();
-        System.out.print("Student enrollment number : ");
-        enrollmentNumber=scan.nextLine();
-
     }
     void displayStudent() {
         System.out.print(libID+"   ");
