@@ -172,6 +172,7 @@ public class Library {
                     add();
                     System.out.println();
                 }
+                System.out.println("Books are added successfully");
                 break;
             case 2: upgradeQuantity();
                 break;
@@ -197,7 +198,7 @@ public class Library {
         for(int i=0;i<100;i++) {
             if (book[i].bookName == null) {
                 book[i].addBook();
-                Books.scan.nextLine();
+                scan.nextLine();
                 break;
             }
         }
@@ -318,6 +319,7 @@ public class Library {
         for(int i=0;i<50;i++){
             if(students[i].studentName==null){
                 students[i].registration();
+                System.out.println("Student registered successfully");
                 break;
             }
         }
