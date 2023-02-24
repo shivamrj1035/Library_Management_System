@@ -7,7 +7,7 @@ public class Library {
     static Student[] students=new Student[50];
     static Books[] book=new Books[100];
     Library() {
-        librarians[0]=new Librarian("John20","John Abraham","John20","20");
+        librarians[0]=new Librarian("Dilip42","Dilip Udhani","Dilip@42","42");
         for(int a=1;a<5;a++) {
             librarians[a]=new Librarian();
         }
