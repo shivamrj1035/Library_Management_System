@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="24th feb&#10;optimization 123">
+    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="24th feb&#10;HOD suggestions added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
     </list>
@@ -226,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677232363942</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="24th feb&#10;HOD suggestions added">
+      <created>1677234413712</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1677234413712</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,7 +266,8 @@
     <MESSAGE value="24th feb&#10;error solved" />
     <MESSAGE value="24th feb&#10;optimization going on" />
     <MESSAGE value="24th feb&#10;optimization 123" />
-    <option name="LAST_COMMIT_MESSAGE" value="24th feb&#10;optimization 123" />
+    <MESSAGE value="24th feb&#10;HOD suggestions added" />
+    <option name="LAST_COMMIT_MESSAGE" value="24th feb&#10;HOD suggestions added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
