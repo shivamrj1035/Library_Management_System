@@ -64,7 +64,7 @@ public class Library {
         }
     }
     void login() {
-        System.out.print("Enter User ID : ");
+        System.out.print("Enter User ID  : ");
         String enteredUserId = scan.nextLine();
         System.out.print("Enter Password : ");
         String enteredPassword = scan.nextLine();

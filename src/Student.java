@@ -22,7 +22,8 @@ public class Student {
         System.out.print("Student name : ");
         studentName=scan.nextLine();
         System.out.print("Student enrollment number : ");
-        enrollmentNumber = scan.nextLine();
+        enrollmentNumber=scan.nextLine();
+
     }
     void displayStudent() {
         System.out.print(libID+"   ");
