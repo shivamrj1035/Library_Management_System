@@ -119,7 +119,7 @@ public class Student {
         }
         else{
             int extraMonthDays=0;
-            int issueMonthDays=calculateDaysOfMonths(issueMonth,issueLeapYear);
+            int issueMonthDays=calculateDaysOfMonths(issueMonth,issueLeapYear)-issueDay+1;
             if(issueYear==returnYear) {
                 if (issueMonth+1 != returnMonth) {
                     for (int month = issueMonth+1; month < returnMonth; month++) {
