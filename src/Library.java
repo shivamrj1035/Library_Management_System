@@ -123,7 +123,7 @@ public class Library {
             captcha();
         }
     }
-   void control() {
+    void control() {
         options_2();
         if(choice_2==0) {
             options();
