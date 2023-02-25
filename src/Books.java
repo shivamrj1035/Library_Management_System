@@ -17,6 +17,7 @@ public class Books {
     void addBook() {
         //To add book entered by the librarian
         bookID=serial++;
+        Library.scan.nextLine();
         System.out.print("Enter Book Name : ");
         bookName=Library.scan.nextLine();
         System.out.print("Enter Author Name : ");
