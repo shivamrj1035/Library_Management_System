@@ -2,13 +2,12 @@ import java.util.Scanner;
 
 public class Librarian {
     Scanner scan=new Scanner(System.in);
-    String password,fullName,librarianId,age,qualification;
+    String password,fullName,librarianId,age;
     boolean access;
-    Librarian(String fullName,String password,String age,String qualification) {
+    Librarian(String fullName,String password,String age) {
         this.fullName=fullName;
         this.password=password;
         this.age=age;
-        this.qualification=qualification;
         createLibrarianID();
     }
     Librarian(){
