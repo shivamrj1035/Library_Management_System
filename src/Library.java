@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Library {
     static Scanner scan=new Scanner(System.in);
     Random random = new Random();
