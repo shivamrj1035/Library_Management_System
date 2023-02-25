@@ -2,22 +2,28 @@ import java.util.Scanner;
 
 public class Librarian {
     Scanner scan=new Scanner(System.in);
-    String password,fullName,librarianId,age;
+    String password,fullName,librarianId,age,qualification;
     boolean access;
-    Librarian(String fullName,String password,String age) {
+    Librarian(String fullName,String password,String age,String qualification) {
         this.fullName=fullName;
         this.password=password;
         this.age=age;
+        this.qualification=qualification;
         createLibrarianID();
     }
     Librarian(){
-
+        //do nothing constructor
     }
     void signUp() {
         System.out.print("Enter Full Name : ");
         fullName=scan.nextLine();
         System.out.print("Enter Age : ");
         age=scan.nextLine();
+        int temp_age=Integer.parseInt(age);
+        if(temp_age<=20) {
+            System.out.println("You age must be above 20 to sign up");
+            return;
+        }
         enterPassword();
         createLibrarianID();
         System.out.println("You have successfully Signed Up \nYour login Id is : "+librarianId);
