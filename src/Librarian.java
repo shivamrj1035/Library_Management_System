@@ -47,10 +47,15 @@ public class Librarian {
             if(pass.length()>=8 && countDigit>=1 && countLowercase>=1 && countUppercase>=1 && countSpecial >=1) {
                 break;
             } else {
-                System.out.println("Please enter a password having  : \n1) Minimum length 8 " +
-                        "\n2) Includes at least one lowercase letter\n3) Includes at least one Uppercase letter" +
-                        "\n4) Includes at least one number \n5) Includes at least one special character" +
-                        "\n\nre-enter password");
+                System.out.println("""
+                        Please enter a password having :-
+                        --> Minimum length 8
+                        --> Includes at least one lowercase letter
+                        --> Includes at least one Uppercase letter
+                        --> Includes at least one number
+                        --> Includes at least one special character
+
+                        re-enter password""");
             }
         }
         System.out.print("Confirm Password : ");

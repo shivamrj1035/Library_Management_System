@@ -456,7 +456,7 @@ public class Library {
                 System.out.println("Please enter correct book id");
                 bookId = searchID();
             }
-            if(students[student_id].checkBook(book[bookId].bookID)){
+            if(students[student_id].checkBook(book[bookId].bookID)) {
                 System.out.println();
                 System.out.print("Enter return date(DD MM YYYY) : ");
                 scan.nextLine();
