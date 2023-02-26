@@ -172,14 +172,7 @@ public class Library {
             case 0:
             case 10:
                 return;
-            case 1: System.out.print("Enter no of books to be added : ");
-                int nBook=scan.nextInt();
-                for(int i=0;i<nBook;i++) {
-                    System.out.println("Enter Book "+(i+1));
-                    addBooks();
-                    System.out.println();
-                }
-                System.out.println("Books are added successfully");
+            case 1: no_Books();
                 break;
             case 2: upgradeQuantity();
                 break;
@@ -200,6 +193,33 @@ public class Library {
             default: System.out.println("Invalid Input\nPress between 0 to 9");
         }
         mainMenu();
+    }
+    void no_Books() {
+        int freeSpace_count=0;
+        int nBook;
+        for (Books books : book) {
+            if (books.bookName == null) {
+                freeSpace_count++;
+            }
+        }
+        if(freeSpace_count==0) {
+            System.out.println("Shelf is full");
+            return;
+        }
+        for(;;) {
+            System.out.print("Enter no of books to be added : ");
+            nBook= scan.nextInt();
+            if(nBook<=freeSpace_count) {
+                break;
+            }
+            System.out.println("Shelf can now only store : "+freeSpace_count+" books");
+        }
+        for(int i=0;i<nBook;i++) {
+            System.out.println("Enter Book "+(i+1));
+            addBooks();
+            System.out.println();
+        }
+        System.out.println("Books are added successfully");
     }
     void addBooks() {
         scan.nextLine();
