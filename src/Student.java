@@ -1,9 +1,9 @@
 public class Student {
     String studentName,enrollmentNumber;
-    String libID;
-    int[] issuedBookID={0,0,0};
-    String [] issueDate={null,null,null};
-    String [] returnDate={null,null,null};
+    String libID;  // Student's library id
+    int[] issuedBookID={0,0,0};  // Array of issued books
+    String [] issueDate={null,null,null};   // Array of issue dates
+    String [] returnDate={null,null,null};  // Array of return date
     static int serial=1001;
     Student(String studentName,String enrollmentNumber) {
         libID="S"+serial++;
@@ -11,9 +11,10 @@ public class Student {
         this.enrollmentNumber=enrollmentNumber;
     }
     Student() {
-
+    // Do nothing constructor
     }
     void registration(String enrollmentNumber) {
+        // To give student id and add student name
         this.enrollmentNumber=enrollmentNumber;
         libID="S"+serial;
         serial++;
@@ -21,6 +22,7 @@ public class Student {
         studentName=Library.scan.nextLine();
     }
     void displayStudent() {
+        // To display all Students
         System.out.print(libID+"   ");
         System.out.print(enrollmentNumber);
         spaceEnroll();
@@ -30,6 +32,7 @@ public class Student {
         System.out.println("  ID   "+"Enrollment Number     "+"  Student name");
     }
     void spaceEnroll() {
+        // To add some extra space for better looks
         int space=22-enrollmentNumber.length();
         if(space<0){
             System.out.print("     ");
@@ -42,6 +45,7 @@ public class Student {
         }
     }
     void displayOneStudent() {
+        // To display details of searched student id
         System.out.println("Id : "+libID+"\nEnrollment Number : "+enrollmentNumber+"\nName : "+studentName);
         System.out.println();
         System.out.println("Issued Book");
@@ -62,6 +66,7 @@ public class Student {
         }
     }
     int count(){
+        // To count number of issued books
         int countIssuedBook=0;
         for(int i=0;i<3;i++) {
             if(issuedBookID[i]!=0) {
@@ -71,6 +76,7 @@ public class Student {
         return (countIssuedBook);
     }
     void issueBook(int id,String date) {
+        // To add book id to issued book and take issue date
         for(int i=0;i<3;i++) {
             if(issuedBookID[i]==0) {
                 issuedBookID[i]=id;
@@ -80,6 +86,7 @@ public class Student {
         }
     }
     boolean checkBook(int id) {
+        // To check book id in issued books
         for(int i=0;i<3;i++) {
             if(issuedBookID[i]==id) {
                 return  true;
@@ -88,6 +95,7 @@ public class Student {
         return false;
     }
     int returnBook(int id,String date) {
+        // To remove book from issued book and take return date
         for(int i=0;i<3;i++) {
             if(issuedBookID[i]==id) {
                 issuedBookID[i]=0;
@@ -99,6 +107,7 @@ public class Student {
         }
         return 0;
     }
+    // Two methods to calculate number of days between issue date and return date
     int calculateNoOfDays(int i) {
         int days;
         String [] issue=issueDate[i].split(" ");

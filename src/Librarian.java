@@ -10,7 +10,9 @@ public class Librarian {
     Librarian(){
         //do nothing constructor
     }
+
     void signUp() {
+        // To signup
         System.out.print("Enter Full Name : ");
         fullName=Library.scan.nextLine();
         System.out.print("Enter Age : ");
@@ -25,6 +27,7 @@ public class Librarian {
         System.out.println("You have successfully Signed Up \nYour login Id is : "+librarianId);
     }
     void enterPassword() {
+        // To take password as input and verify it
         String pass;
         for(;;) {
             System.out.print("Enter Password : ");
@@ -60,11 +63,13 @@ public class Librarian {
         }
     }
     void createLibrarianID() {
+        // Creat a user id for librarian
         String[] name=fullName.split(" ");
         librarianId=name[0]+"@";
         librarianId=librarianId.concat(age);
     }
     void login(String enteredUserId,String enteredPassword) {
+        // To sign in userid
         if(enteredUserId.equals(librarianId)&&enteredPassword.equals(password)) {
             System.out.println("You have successfully signed in");
             access=true;
@@ -72,13 +77,16 @@ public class Librarian {
             access=false;
         }
     }
+
     void display() {
+        // To display all signed up Librarians
         System.out.print(librarianId);
         idSpace();
         System.out.print(fullName);
         nameSpace();
         System.out.print(age+"\n");
     }
+    // Adding some extra space for better looks
     void idSpace(){
         int space=15-librarianId.length();
         if(space<0){

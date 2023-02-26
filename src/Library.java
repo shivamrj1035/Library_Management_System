@@ -18,6 +18,7 @@ public class Library {
         for(int a=1;a< librarians.length;a++) {
             librarians[a]=new Librarian();
         }
+        // Already registered students
         students[0]=new Student("Akash Rai","22002171310109");
         students[1]=new Student("Mansi Malaviya","22002171310054");
         students[2]=new Student("Aditya Singh","22002171210065");
@@ -26,6 +27,7 @@ public class Library {
         for(int i=5;i< students.length;i++) {
             students[i]=new Student();
         }
+        // Some books which are alreary added to library
         book[0]=new Books("Java The Complete Reference","Herbert Schildt","Tata McGrawHill");
         book[1]=new Books("Core Java An Integrated Approach","Dr R Nageswara Rao","Dream tech Press");
         book[2]=new Books("Core Java Volume I-Fundamentals","Cay S. Horstmann","Pearson India");
@@ -75,6 +77,7 @@ public class Library {
         }
     }
     void login() {
+        // login method
         System.out.print("Enter User ID  : ");
         String enteredUserId = scan.nextLine();
         System.out.print("Enter Password : ");
@@ -106,6 +109,7 @@ public class Library {
         }
     }
     void captcha() {
+        // To generate Captcha
         int a=random.nextInt(100);//creates a random variable between 0 and 99
         int b=random.nextInt(10);//creates a random variable between 0 and 9
         int operator=random.nextInt(3);
@@ -129,6 +133,7 @@ public class Library {
         }
     }
     void control() {
+        // To execute all methods as per user input
         mainMenu();
         if(mainMenu_choice ==0) {
             loginMenu();
@@ -144,6 +149,7 @@ public class Library {
        control();
     }
     void showLibrarians() {
+        // To show all signed up librarians
         librarians[0].header();
         for (Librarian librarian : librarians) {
             if (librarian.librarianId == null) {
@@ -154,6 +160,7 @@ public class Library {
     }
     int mainMenu_choice, bookId;
     void mainMenu() {
+        // All functionalities
         System.out.println("\n***************************************************************");
         System.out.println("Press 0 to return to the login menu");
         System.out.println("Press 1 to Add new Book");
@@ -195,6 +202,7 @@ public class Library {
         mainMenu();
     }
     void no_Books() {
+        // To check whether there is space for new book or not
         int freeSpace_count=0;
         int nBook;
         for (Books books : book) {
@@ -222,6 +230,7 @@ public class Library {
         System.out.println("Books are added successfully");
     }
     void addBooks() {
+        // To add book
         scan.nextLine();
         for (Books books : book) {
             if (books.bookName == null) {
@@ -231,6 +240,7 @@ public class Library {
         }
     }
     void showBooks() {
+        // To display all books
         book[0].header();
         for (Books books : book) {
             if (books.bookName == null) {
@@ -240,6 +250,7 @@ public class Library {
         }
     }
     void upgradeQuantity() {
+        // To upgrade quantity of available books
         System.out.println("To Upgrade Quantity");
         bookId=searchID();
         if(bookId==401) {
@@ -252,6 +263,7 @@ public class Library {
         System.out.println("Quantity has been upgraded successfully");
     }
     void searchBooks() {
+        // To search a book from all added books in 4 ways
         System.out.println("***************************************************************");
         System.out.println("Press 1 to Search by Book ID");
         System.out.println("Press 2 to Search by Book Name");
@@ -279,6 +291,7 @@ public class Library {
         }
     }
     int searchID() {
+        // Search a books by ID
         System.out.print("Enter Book ID : ");
         int enteredBookID=scan.nextInt();
         int i=0;
@@ -293,6 +306,7 @@ public class Library {
         return i;
     }
     void searchName() {
+        //To search a book by name
         System.out.print("Enter Book Name : ");
         scan.nextLine();
         String enteredBookName=scan.nextLine();
@@ -311,6 +325,7 @@ public class Library {
         }
     }
     void searchAuthor() {
+        // To search a book by Author name
         System.out.print("Enter Author Name : ");
         scan.nextLine();
         String enteredAuthorName=scan.nextLine();
@@ -329,6 +344,7 @@ public class Library {
         }
     }
     void searchPublisher() {
+        // To search a book by publisher name
         System.out.print("Enter Publisher : ");
         scan.nextLine();
         String enteredPublisher=scan.nextLine();
@@ -347,6 +363,7 @@ public class Library {
         }
     }
     void registerStudent(){
+        // To register student
         System.out.print("Student enrollment number : ");
         scan.nextLine();
         String enrollmentNumber=scan.nextLine();
@@ -371,6 +388,7 @@ public class Library {
         }
     }
     void showStudents() {
+        // To display all Students
         students[0].header();
         for (Student student : students) {
             if (student.studentName == null) {
@@ -380,6 +398,7 @@ public class Library {
         }
     }
     int searchStudent() {
+        // To search student records by id
         System.out.print("Enter Student Id : ");
         scan.nextLine();
         String id=scan.nextLine();
@@ -402,6 +421,7 @@ public class Library {
         return 401;
     }
     void issueBook(int student_id) {
+        // To issue book
         if(student_id!=401) {
             int issuedBook_count=students[student_id].count();
             if(issuedBook_count<3) {
@@ -428,6 +448,7 @@ public class Library {
         }
     }
     void returnBook(int student_id) {
+        // Return book
         if(student_id!=401) {
             System.out.println();
             bookId=searchID();
