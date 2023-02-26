@@ -6,8 +6,9 @@
     <option name="SHOW_STRUCTURE" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="add books max 100 books done">
+    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="upgrade quantity exception solved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librarian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -355,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677413931247</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="upgrade quantity exception solved">
+      <created>1677415919661</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1677415919661</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,7 +384,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19th Feb&#10;issued book name added" />
     <MESSAGE value="20th Feb&#10;return date added&#10;fine added&#10;exceptions needed to be sorted out" />
     <MESSAGE value="20th Feb&#10;fine added month and days exception sorted out &#10;years exceptions needed to be sorted out" />
     <MESSAGE value="22nd Feb&#10;return books days sorted out but if year differnce is there then +-10days eroor" />
@@ -401,7 +408,8 @@
     <MESSAGE value="Comments --&gt; some" />
     <MESSAGE value="enter solved in add books" />
     <MESSAGE value="add books max 100 books done" />
-    <option name="LAST_COMMIT_MESSAGE" value="add books max 100 books done" />
+    <MESSAGE value="upgrade quantity exception solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade quantity exception solved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
