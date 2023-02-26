@@ -6,7 +6,7 @@
     <option name="SHOW_STRUCTURE" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="enter solved in add books">
+    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="add books max 100 books done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
     </list>
@@ -348,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677412822969</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="add books max 100 books done">
+      <created>1677413931247</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1677413931247</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +376,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19th Feb&#10;issue solved" />
     <MESSAGE value="19th Feb&#10;issued book name added" />
     <MESSAGE value="20th Feb&#10;return date added&#10;fine added&#10;exceptions needed to be sorted out" />
     <MESSAGE value="20th Feb&#10;fine added month and days exception sorted out &#10;years exceptions needed to be sorted out" />
@@ -394,7 +400,8 @@
     <MESSAGE value="Code Optimized" />
     <MESSAGE value="Comments --&gt; some" />
     <MESSAGE value="enter solved in add books" />
-    <option name="LAST_COMMIT_MESSAGE" value="enter solved in add books" />
+    <MESSAGE value="add books max 100 books done" />
+    <option name="LAST_COMMIT_MESSAGE" value="add books max 100 books done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

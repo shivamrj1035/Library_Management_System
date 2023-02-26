@@ -242,6 +242,10 @@ public class Library {
     void upgradeQuantity() {
         System.out.println("To Upgrade Quantity");
         bookId=searchID();
+        if(bookId==401) {
+            System.out.println("No such book found in the library");
+            return;
+        }
         System.out.print("Quantity you want to Add : ");
         int quantity=scan.nextInt();
         book[bookId].bookQuantity+=quantity;
