@@ -202,10 +202,10 @@ public class Library {
         mainMenu();
     }
     void addBooks() {
+        scan.nextLine();
         for (Books books : book) {
             if (books.bookName == null) {
                 books.addBook();
-                scan.nextLine();
                 break;
             }
         }

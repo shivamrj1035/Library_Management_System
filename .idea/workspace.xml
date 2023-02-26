@@ -6,9 +6,9 @@
     <option name="SHOW_STRUCTURE" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="Code Optimized">
+    <list default="true" id="f2a3ed70-8134-495a-98f2-362d85ab9999" name="Changes" comment="Comments --&gt; some">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Books.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -335,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677405863855</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Comments --&gt; some">
+      <created>1677411647276</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1677411647276</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,7 +363,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19th Feb &#10;deleting main file" />
     <MESSAGE value="19th Feb&#10;Search by publisher added&#10;issue in search by author and search by publisher&#10;No such book found in the library&#10;always printing" />
     <MESSAGE value="19th Feb&#10;issue solved" />
     <MESSAGE value="19th Feb&#10;issued book name added" />
@@ -381,7 +387,8 @@
     <MESSAGE value="25th&#10;age&gt;20 is added" />
     <MESSAGE value="25th" />
     <MESSAGE value="Code Optimized" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Optimized" />
+    <MESSAGE value="Comments --&gt; some" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments --&gt; some" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
