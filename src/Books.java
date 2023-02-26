@@ -3,12 +3,12 @@ public class Books {
     static int serial=1001;
     //To give id to the books
     String bookName,authorName,publisher;
-    Books(String bookName,String authorName,String publisher,int bookQuantity) {
+    Books(String bookName,String authorName,String publisher) {
         //to add initial books
         bookID=serial++;
         this.bookName=bookName;
         this.authorName=authorName;
-        this.bookQuantity=bookQuantity;
+        this.bookQuantity= 5;
         this.publisher=publisher;
     }
     Books() {

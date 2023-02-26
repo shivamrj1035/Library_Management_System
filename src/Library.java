@@ -18,16 +18,16 @@ public class Library {
         for(int i=5;i< students.length;i++) {
             students[i]=new Student();
         }
-        book[0]=new Books("Java The Complete Reference","Herbert Schildt","Tata McGrawHill",5);
-        book[1]=new Books("Core Java An Integrated Approach","Dr R Nageswara Rao","Dream tech Press",5);
-        book[2]=new Books("Core Java Volume I-Fundamentals","Cay S. Horstmann","Pearson India",5);
-        book[3]=new Books("The Java Programming Language","James Gosling","Addison Wesley",5);
-        book[4]=new Books("Higher Engineering Mathematics","Dr B S Grewal","Khanna Publisher",5);
-        book[5]=new Books("Engineering Physics","G Vijayakumari","Vikas Publishing House",5);
-        book[6]=new Books("Software Engineering","Roger S. Pressman","Tata McGrawHill",5);
-        book[7]=new Books("Beginning Arduino","Michael McRobetrs","Apress",5);
-        book[8]=new Books("Environmental Science","Dr. B.R. Shah","Mahajan Publishing House",5);
-        book[9]=new Books("Physics-2","Nimish Das","Books India",5);
+        book[0]=new Books("Java The Complete Reference","Herbert Schildt","Tata McGrawHill");
+        book[1]=new Books("Core Java An Integrated Approach","Dr R Nageswara Rao","Dream tech Press");
+        book[2]=new Books("Core Java Volume I-Fundamentals","Cay S. Horstmann","Pearson India");
+        book[3]=new Books("The Java Programming Language","James Gosling","Addison Wesley");
+        book[4]=new Books("Higher Engineering Mathematics","Dr B S Grewal","Khanna Publisher");
+        book[5]=new Books("Engineering Physics","G Vijayakumari","Vikas Publishing House");
+        book[6]=new Books("Software Engineering","Roger S. Pressman","Tata McGrawHill");
+        book[7]=new Books("Beginning Arduino","Michael McRobetrs","Apress");
+        book[8]=new Books("Environmental Science","Dr. B.R. Shah","Mahajan Publishing House");
+        book[9]=new Books("Physics-2","Nimish Das","Books India");
         for(int i=10;i< book.length;i++) {
             book[i]=new Books();
         }
