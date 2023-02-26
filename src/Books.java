@@ -51,10 +51,11 @@ public class Books {
         int space=39-bookName.length();
         if(space<0){
             System.out.print("     ");
-        }
-        else {
-            for (int i = 0; i < space; i++) {
+        } else {
+            int i = 0;
+            while (i < space) {
                 System.out.print(" ");
+                i++;
             }
         }
     }
@@ -62,10 +63,11 @@ public class Books {
         int space=25-authorName.length();
         if(space<0){
             System.out.print("     ");
-        }
-        else {
-            for (int i = 0; i < space; i++) {
+        } else {
+            int i = 0;
+            while (i < space) {
                 System.out.print(" ");
+                i++;
             }
         }
     }
@@ -73,10 +75,11 @@ public class Books {
         int space=25-publisher.length();
         if(space<0){
             System.out.print("     ");
-        }
-        else {
-            for (int i = 0; i < space; i++) {
+        } else {
+            int i = 0;
+            while (i < space) {
                 System.out.print(" ");
+                i++;
             }
         }
     }

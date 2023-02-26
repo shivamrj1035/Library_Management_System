@@ -1,7 +1,4 @@
-import java.util.Scanner;
-
 public class Student {
-    Scanner scan=new Scanner(System.in);
     String studentName,enrollmentNumber;
     String libID;
     int[] issuedBookID={0,0,0};
@@ -21,7 +18,7 @@ public class Student {
         libID="S"+serial;
         serial++;
         System.out.print("Student name : ");
-        studentName=scan.nextLine();
+        studentName=Library.scan.nextLine();
     }
     void displayStudent() {
         System.out.print(libID+"   ");
@@ -36,10 +33,11 @@ public class Student {
         int space=22-enrollmentNumber.length();
         if(space<0){
             System.out.print("     ");
-        }
-        else {
-            for (int i = 0; i < space; i++) {
+        } else {
+            int i = 0;
+            while (i < space) {
                 System.out.print(" ");
+                i++;
             }
         }
     }
@@ -115,8 +113,7 @@ public class Student {
         boolean returnLeapYear= (returnYear%4==0 && returnYear%100!=0)||(returnYear%400==0);
         if (issueMonth == returnMonth && issueYear==returnYear) {
             days = returnDay - issueDay +1;
-        }
-        else{
+        } else {
             int extraMonthDays=0;
             int issueMonthDays=calculateDaysOfMonths(issueMonth,issueLeapYear)-issueDay+1;
             if(issueYear==returnYear) {
@@ -125,14 +122,12 @@ public class Student {
                         extraMonthDays+=calculateDaysOfMonths(month,issueLeapYear);
                     }
                 }
-            }
-            else {
+            } else {
                 int years=returnYear-issueYear-1;
                 for(int year=1;year<=years;year++) {
                     if(((issueYear+year)%4==0 && (issueYear+year)%100!=0)||((issueYear+year)%400==0)) {
                         extraMonthDays+=366;
-                    }
-                    else {
+                    } else {
                         extraMonthDays+=365;
                     }
                 }
