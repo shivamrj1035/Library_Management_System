@@ -2,9 +2,17 @@ import java.util.*;
 public class Library {
     static Scanner scan=new Scanner(System.in);
     static Random random = new Random();
-    static Librarian[] librarians=new Librarian[5];
-    static Student[] students=new Student[50];
-    static Books[] book=new Books[100];
+    static Librarian[] librarians=new Librarian[5]; //creates 5 librarians
+    static Student[] students=new Student[50]; //creates 50 students
+    static Books[] book=new Books[100]; //creates 100 books
+    /*
+    A constructor to set
+    --> Default librarian
+        --> User ID  : Librarian@21
+        --> Password : Librarian@21
+    --> Store 10 books data
+    --> Resister 5 students data
+    */
     Library() {
         librarians[0]=new Librarian("Librarian","Librarian@21","21");
         for(int a=1;a< librarians.length;a++) {
@@ -32,10 +40,12 @@ public class Library {
             book[i]=new Books();
         }
     }
-    static  int librarianAccount_count =1;
-    int choice,loginAttempt_count;
-    boolean access=true;
+    static  int librarianAccount_count =1; //counts how many librarians account have been created
+    int choice; //stores choices entered by the user
+    int loginAttempt_count; //counts how many login attempt had been made by the user
+    boolean access; //stores true--> login id and password are correct
     void loginMenu() {
+        //login menu
         System.out.println("***************************************************************");
         System.out.println("Press 0 to Exit Application.");
         System.out.println("Press 1 Sign Up.");
@@ -54,11 +64,13 @@ public class Library {
                 loginMenu();
         }
     }
+    //signUp method
     void signUp() {
         if(librarianAccount_count == librarians.length) {
             System.out.println("Maximum Accounts Created");
         } else {
             librarians[librarianAccount_count].signUp();
+            //calls the signUp method in the Librarians class to register a librarian
             librarianAccount_count++;
         }
     }
