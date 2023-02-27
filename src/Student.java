@@ -100,9 +100,9 @@ public class Student {
             if(issuedBookID[i]==id) {
                 issuedBookID[i]=0;
                 returnDate[i]=date;
-                int days= calculateNoOfDays(i);
-                returnDate[i]=null;
-                return(days);
+                int days = calculateNoOfDays(i);
+                returnDate[i] = null;
+                return (days);
             }
         }
         return 0;

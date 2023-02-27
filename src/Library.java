@@ -27,7 +27,7 @@ public class Library {
         for(int i=5;i< students.length;i++) {
             students[i]=new Student();
         }
-        // Some books which are alreary added to library
+        // Some books which are already added to library
         book[0]=new Books("Java The Complete Reference","Herbert Schildt","Tata McGrawHill");
         book[1]=new Books("Core Java An Integrated Approach","Dr R Nageswara Rao","Dream tech Press");
         book[2]=new Books("Core Java Volume I-Fundamentals","Cay S. Horstmann","Pearson India");

@@ -1,0 +1,37 @@
+ boolean checkReturnDateValid(int id,String date) {
+        //to check return date is valid or not
+        int i;
+        for(i=0;i<3;i++) {
+            if(issuedBookID[i]==id) {
+                issuedBookID[i]=0;
+                returnDate[i]=date;
+            }
+        }
+        boolean check;
+        String [] issue=issueDate[i].split(" ");
+        int issueDay=Integer.parseInt(issue[0]);
+        int issueMonth=Integer.parseInt(issue[1]);
+        int issueYear=Integer.parseInt(issue[2]);
+        String [] returnD=returnDate[i].split(" ");
+        int returnDay=Integer.parseInt(returnD[0]);
+        int returnMonth=Integer.parseInt(returnD[1]);
+        int returnYear=Integer.parseInt(returnD[2]);
+        if(returnYear<issueYear) {
+            check=false;
+        } else if (returnYear==issueYear) {
+            if(returnMonth<issueMonth) {
+                check=false;
+            } else if(returnMonth==issueMonth) {
+                if(returnDay<issueDay) {
+                    check=false;
+                } else {
+                    check=true;
+                }
+            } else {
+                check=true;
+            }
+        } else {
+            check=true;
+        }
+        return check;
+    }
