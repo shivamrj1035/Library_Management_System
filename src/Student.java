@@ -107,6 +107,35 @@ public class Student {
         }
         return 0;
     }
+    boolean checkReturnDate(int id,String returnDate) {
+        int i;
+        for(i=0;i<3;i++) {
+            if(issuedBookID[i]==id) {
+                break;
+            }
+        }
+        String [] issue=issueDate[i].split(" ");
+        int issueDay=Integer.parseInt(issue[0]);
+        int issueMonth=Integer.parseInt(issue[1]);
+        int issueYear=Integer.parseInt(issue[2]);
+        String [] returnD=returnDate.split(" ");
+        int returnDay=Integer.parseInt(returnD[0]);
+        int returnMonth=Integer.parseInt(returnD[1]);
+        int returnYear=Integer.parseInt(returnD[2]);
+        if(returnYear>issueYear) {
+            return true;
+        } else if (returnYear==issueYear) {
+            if(returnMonth>issueMonth) {
+                return true;
+            } else if (returnMonth==issueMonth) {
+                return returnDay >= issueDay;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
     // Two methods to calculate number of days between issue date and return date
     int calculateNoOfDays(int i) {
         int days;
