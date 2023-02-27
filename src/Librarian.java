@@ -68,7 +68,7 @@ public class Librarian {
         }
     }
     void createLibrarianID() {
-        // Creat a user id for librarian
+        // Create a user id for librarian
         String[] name=fullName.split(" ");
         librarianId=name[0]+"@";
         librarianId=librarianId.concat(age);
