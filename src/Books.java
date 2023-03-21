@@ -14,9 +14,9 @@ public class Books {
     Books() {
         //do nothing constructor
     }
-    void addBook() {
+    void addBook(int i) {
         //To add book entered by the librarian
-        bookID=serial++;
+        bookID=1001+i;
         System.out.print("Enter Book Name : ");
         bookName=Library.scan.nextLine();
         System.out.print("Enter Author Name : ");

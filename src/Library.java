@@ -143,7 +143,7 @@ public class Library {
                 }
                 return;
             }
-        } else if(mainMenu_choice ==10) {
+        } else if(mainMenu_choice ==11) {
             showLibrarians();
         }
        control();
@@ -167,17 +167,18 @@ public class Library {
         System.out.println("Press 2 to Upgrade Quantity of a Book");
         System.out.println("Press 3 to Search a Book");
         System.out.println("Press 4 to Show All Books");
-        System.out.println("Press 5 to Register Student");
-        System.out.println("Press 6 to Show All Registered Students");
-        System.out.println("Press 7 to issue Book");
-        System.out.println("Press 8 to return Book");
-        System.out.println("Press 9 to search a student");
-        System.out.println("Press 10 to Show All Registered Librarians");
+        System.out.println("Press 5 to Delete a Book");
+        System.out.println("Press 6 to Register Student");
+        System.out.println("Press 7 to Show All Registered Students");
+        System.out.println("Press 8 to issue Book");
+        System.out.println("Press 9 to return Book");
+        System.out.println("Press 10 to search a student");
+        System.out.println("Press 11 to Show All Registered Librarians");
         System.out.println("***************************************************************");
         mainMenu_choice = scan.nextInt();
         switch (mainMenu_choice) {
             case 0:
-            case 10:
+            case 11:
                 return;
             case 1: no_Books();
                 break;
@@ -187,17 +188,19 @@ public class Library {
                 break;
             case 4: showBooks();
                 break;
-            case 5: registerStudent();
+            case 5 : deleteBook();
                 break;
-            case 6: showStudents();
+            case 6: registerStudent();
                 break;
-            case 7: issueBook(searchStudent());
+            case 7: showStudents();
                 break;
-            case 8: returnBook(searchStudent());
+            case 8: issueBook(searchStudent());
                 break;
-            case 9: searchStudent();
+            case 9: returnBook(searchStudent());
                 break;
-            default: System.out.println("Invalid Input\nPress between 0 to 9");
+            case 10: searchStudent();
+                break;
+            default: System.out.println("Invalid Input\nPress between 0 to 11");
         }
         mainMenu();
     }
@@ -232,9 +235,9 @@ public class Library {
     void addBooks() {
         // To add book
         scan.nextLine();
-        for (Books books : book) {
-            if (books.bookName == null) {
-                books.addBook();
+        for (int i=0;i<book.length;i++) {
+            if (book[i].bookName == null) {
+                book[i].addBook(i);
                 break;
             }
         }
@@ -296,11 +299,11 @@ public class Library {
         int enteredBookID=scan.nextInt();
         int i=0;
         for(;i<book.length;i++) {
-            if(book[i].bookID==enteredBookID){
-                break;
-            }
-            else if(book[i].bookID==0){
+            if(book[i].bookID==0){
                 return 401;//error code
+            }
+            else if(book[i].bookID==enteredBookID){
+                break;
             }
         }
         return i;
@@ -360,6 +363,20 @@ public class Library {
                 System.out.println();
                 display_count++;
             }
+        }
+    }
+    void deleteBook() {
+        bookId = searchID();
+        if (bookId == 401) {
+            System.out.println("No such book found in the library");
+        }
+        else {
+            book[bookId].bookName=null;
+            book[bookId].authorName=null;
+            book[bookId].publisher=null;
+            book[bookId].bookQuantity=0;
+            book[bookId].bookID=0;
+            System.out.println("Book has been successfully deleted");
         }
     }
     void registerStudent(){
