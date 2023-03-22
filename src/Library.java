@@ -299,7 +299,7 @@ public class Library {
         int enteredBookID=scan.nextInt();
         int i=0;
         for(;i<book.length;i++) {
-            if(book[i].bookID==0){
+            if(book[i].bookID==0 && i==book.length-1){
                 return 401;//error code
             }
             else if(book[i].bookID==enteredBookID){
