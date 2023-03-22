@@ -472,40 +472,43 @@ public class Library {
     void returnBook(int student_id) {
         // Return book
         if(student_id!=401) {
-            System.out.println();
-            bookId=searchID();
-            while (bookId == 401) {
-                System.out.println("Please enter correct book id");
-                bookId = searchID();
-            }
-            if(students[student_id].checkBook(book[bookId].bookID)) {
+            int issuedBook_count=students[student_id].count();
+            if(issuedBook_count!=0) {
                 System.out.println();
-                scan.nextLine();
-                System.out.print("Enter return date(DD MM YYYY) : ");
-                String returnDate=scan.nextLine();
-                while(checkDate(returnDate)){
-                    System.out.println("Not a valid date re-enter date");
-                    System.out.print("Enter return date(DD MM YYYY) : ");
-                    returnDate=scan.nextLine();
+                bookId = searchID();
+                while (bookId == 401) {
+                    System.out.println("Please enter correct book id");
+                    bookId = searchID();
                 }
-                while(!students[student_id].checkReturnDate(book[bookId].bookID,returnDate)){
-                    System.out.println("return date cannot come before issue date\nre-enter date");
+                if (students[student_id].checkBook(book[bookId].bookID)) {
+                    System.out.println();
+                    scan.nextLine();
                     System.out.print("Enter return date(DD MM YYYY) : ");
-                    returnDate=scan.nextLine();
-                    while(checkDate(returnDate)){
+                    String returnDate = scan.nextLine();
+                    while (checkDate(returnDate)) {
                         System.out.println("Not a valid date re-enter date");
                         System.out.print("Enter return date(DD MM YYYY) : ");
-                        returnDate=scan.nextLine();
+                        returnDate = scan.nextLine();
                     }
+                    while (!students[student_id].checkReturnDate(book[bookId].bookID, returnDate)) {
+                        System.out.println("return date cannot come before issue date\nre-enter date");
+                        System.out.print("Enter return date(DD MM YYYY) : ");
+                        returnDate = scan.nextLine();
+                        while (checkDate(returnDate)) {
+                            System.out.println("Not a valid date re-enter date");
+                            System.out.print("Enter return date(DD MM YYYY) : ");
+                            returnDate = scan.nextLine();
+                        }
+                    }
+                    int days = students[student_id].returnBook(book[bookId].bookID, returnDate);
+                    if (days > 15) {
+                        System.out.println(students[student_id].studentName + " is late for returning book by " + (days - 15) + " days\nFine : " + ((days - 15) * 2));
+                    }
+                    System.out.println("Book returned successfully");
+                    book[bookId].bookQuantity++;
+                } else {
+                    System.out.println("Student has issued no such book");
                 }
-                int days=students[student_id].returnBook(book[bookId].bookID,returnDate);
-                if(days>15) {
-                    System.out.println(students[student_id].studentName+" is late for returning book by "+(days-15)+" days\nFine : " +((days-15)*2));
-                }
-                System.out.println("Book returned successfully");
-                book[bookId].bookQuantity++;
-            } else {
-                System.out.println("Student has issued no such book");
             }
         }
     }
