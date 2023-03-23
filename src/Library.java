@@ -317,14 +317,13 @@ public class Library {
         scan.nextLine();
         String enteredBookName=scan.nextLine();
         int display_count=0;
-        for (Books books : book) {
-            if (books.bookName == null) {
-                if (display_count == 0) {
+        for (int i=0;i<book.length;i++) {
+            if (book[i].bookName == null) {
+                if (display_count == 0 && i==book.length-1) {
                     System.out.println("No such book found in the library");
                 }
-                break;
-            } else if (books.bookName.equalsIgnoreCase(enteredBookName)) {
-                books.displayOneBook();
+            } else if (book[i].bookName.equalsIgnoreCase(enteredBookName)) {
+                book[i].displayOneBook();
                 System.out.println();
                 display_count++;
             }
@@ -336,14 +335,13 @@ public class Library {
         scan.nextLine();
         String enteredAuthorName=scan.nextLine();
         int display_count=0;
-        for (Books books : book) {
-            if (books.authorName == null) {
-                if (display_count == 0) {
+        for (int i=0;i<book.length;i++) {
+            if (book[i].bookName == null) {
+                if (display_count == 0 && i==book.length-1) {
                     System.out.println("No such book found in the library");
                 }
-                break;
-            } else if (books.authorName.equalsIgnoreCase(enteredAuthorName)) {
-                books.displayOneBook();
+            } else if (book[i].authorName.equalsIgnoreCase(enteredAuthorName)) {
+                book[i].displayOneBook();
                 System.out.println();
                 display_count++;
             }
@@ -355,14 +353,13 @@ public class Library {
         scan.nextLine();
         String enteredPublisher=scan.nextLine();
         int display_count=0;
-        for (Books books : book) {
-            if (books.publisher == null) {
-                if (display_count == 0) {
+        for (int i=0;i<book.length;i++) {
+            if (book[i].bookName == null) {
+                if (display_count == 0 && i==book.length-1) {
                     System.out.println("No such book found in the library");
                 }
-                break;
-            } else if (books.publisher.equalsIgnoreCase(enteredPublisher)) {
-                books.displayOneBook();
+            } else if (book[i].publisher.equalsIgnoreCase(enteredPublisher)) {
+                book[i].displayOneBook();
                 System.out.println();
                 display_count++;
             }
