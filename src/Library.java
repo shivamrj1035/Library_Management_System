@@ -371,6 +371,15 @@ public class Library {
             System.out.println("No such book found in the library");
         }
         else {
+            for (Student student : students) {
+                if (student.count() != 0) {
+                    for (int j = 0; j < student.issuedBookID.length; j++) {
+                        if (student.issuedBookID[j] == book[bookId].bookID) {
+                            student.issuedBookID[j] = 0;
+                        }
+                    }
+                }
+            }
             book[bookId].bookName=null;
             book[bookId].authorName=null;
             book[bookId].publisher=null;
