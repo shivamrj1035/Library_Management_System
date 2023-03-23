@@ -73,20 +73,23 @@ public class Library {
         } else {
             librarians[librarianAccount_count].signUp();
             //calls the signUp method in the Librarians class to register a librarian
-            librarianAccount_count++;
+            int temp_age=Integer.parseInt(librarians[librarianAccount_count].age);
+            if(temp_age>20) {
+                librarianAccount_count++;
+            }
         }
     }
+    // login method
     void login() {
-        // login method
-        System.out.print("Enter User ID  : ");
-        String enteredUserId = scan.nextLine();
-        System.out.print("Enter Password : ");
-        String enteredPassword = scan.nextLine();
-        captcha();
-        if (loginAttempt_count == 2) {
+        if (loginAttempt_count == 3) {
             System.out.println("Account locked for 1 hour");
             access = false;
         } else {
+            System.out.print("Enter User ID  : ");
+            String enteredUserId = scan.nextLine();
+            System.out.print("Enter Password : ");
+            String enteredPassword = scan.nextLine();
+            captcha();
             for (int i = 0; i < librarians.length; i++) {
                 if (librarians[i].librarianId == null) {
                     System.out.println("Incorrect User Id or Password");
