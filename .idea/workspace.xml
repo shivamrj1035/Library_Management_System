@@ -6,12 +6,7 @@
     <option name="SHOW_STRUCTURE" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71af6d7a-2272-491b-ae61-f1a90ad7037d" name="Changes" comment="23rd March&#10;--&gt; delete books solved">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
-    </list>
+    <list default="true" id="71af6d7a-2272-491b-ae61-f1a90ad7037d" name="Changes" comment="23rd March&#10;--&gt; delete books solved" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,8 +29,8 @@
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -406,7 +401,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679496034317</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="23rd March&#10;--&gt; delete books solved">
+      <created>1679550704859</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1679550704859</updated>
+    </task>
+    <task id="LOCAL-00047" summary="23rd March&#10;--&gt; delete books solved">
+      <created>1679550845892</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1679550845892</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
