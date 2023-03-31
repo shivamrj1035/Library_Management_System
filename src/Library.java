@@ -56,14 +56,16 @@ public class Library {
         choice=scan.nextInt();
         scan.nextLine();
         switch (choice) {
-            case 0 : return;
-            case 1 : signUp();
+            case 0 -> {}
+            case 1 -> {
+                signUp();
                 loginMenu();
-                break;
-            case 2 : login();
-                break;
-            default: System.out.println("Invalid Input\nPress between 0 to 2");
+            }
+            case 2 -> login();
+            default -> {
+                System.out.println("Invalid Input\nPress between 0 to 2");
                 loginMenu();
+            }
         }
     }
     //signUp method
@@ -180,30 +182,20 @@ public class Library {
         System.out.println("***************************************************************");
         mainMenu_choice = scan.nextInt();
         switch (mainMenu_choice) {
-            case 0:
-            case 11:
+            case 0, 11 -> {
                 return;
-            case 1: no_Books();
-                break;
-            case 2: upgradeQuantity();
-                break;
-            case 3: searchBooks();
-                break;
-            case 4: showBooks();
-                break;
-            case 5 : deleteBook();
-                break;
-            case 6: registerStudent();
-                break;
-            case 7: showStudents();
-                break;
-            case 8: issueBook(searchStudent());
-                break;
-            case 9: returnBook(searchStudent());
-                break;
-            case 10: searchStudent();
-                break;
-            default: System.out.println("Invalid Input\nPress between 0 to 11");
+            }
+            case 1 -> no_Books();
+            case 2 -> upgradeQuantity();
+            case 3 -> searchBooks();
+            case 4 -> showBooks();
+            case 5 -> deleteBook();
+            case 6 -> registerStudent();
+            case 7 -> showStudents();
+            case 8 -> issueBook(searchStudent());
+            case 9 -> returnBook(searchStudent());
+            case 10 -> searchStudent();
+            default -> System.out.println("Invalid Input\nPress between 0 to 11");
         }
         mainMenu();
     }

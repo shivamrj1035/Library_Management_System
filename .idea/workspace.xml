@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71af6d7a-2272-491b-ae61-f1a90ad7037d" name="Changes" comment="23rd March&#10;--&gt; errors in search solved">
+    <list default="true" id="71af6d7a-2272-491b-ae61-f1a90ad7037d" name="Changes" comment="--&gt; Space Optimized">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Books.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +103,7 @@
       <workItem from="1680165544404" duration="302000" />
       <workItem from="1680171630141" duration="36000" />
       <workItem from="1680171674783" duration="221000" />
-      <workItem from="1680272639879" duration="166000" />
-    </task>
-    <task id="LOCAL-00002" summary="17th Feb College">
-      <created>1676644055348</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1676644055348</updated>
+      <workItem from="1680272639879" duration="587000" />
     </task>
     <task id="LOCAL-00003" summary="17th Feb College">
       <created>1676724366399</created>
@@ -447,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679589334789</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="--&gt; Space Optimized">
+      <created>1680272838255</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1680272838255</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="23rd feb&#10;return days optimized" />
     <MESSAGE value="24th feb&#10;optimized" />
     <MESSAGE value="24th feb&#10;error solved" />
     <MESSAGE value="24th feb&#10;optimization going on" />
@@ -496,7 +496,8 @@
     <MESSAGE value="23rd March&#10;--&gt; delete books solved" />
     <MESSAGE value="23rd March&#10;--&gt; errors in login menu solved" />
     <MESSAGE value="23rd March&#10;--&gt; errors in search solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="23rd March&#10;--&gt; errors in search solved" />
+    <MESSAGE value="--&gt; Space Optimized" />
+    <option name="LAST_COMMIT_MESSAGE" value="--&gt; Space Optimized" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
