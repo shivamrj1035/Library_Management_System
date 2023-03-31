@@ -59,19 +59,13 @@ public class Books {
         }
     }
     void spaceAuthorName() {
-        int space=25-authorName.length();
-        if(space<0){
-            System.out.print("     ");
-        } else {
-            int i = 0;
-            while (i < space) {
-                System.out.print(" ");
-                i++;
-            }
-        }
+        space(authorName);
     }
     void spacePublisher() {
-        int space=25-publisher.length();
+        space(publisher);
+    }
+    void space(String authorName) {
+        int space=25- authorName.length();
         if(space<0){
             System.out.print("     ");
         } else {
@@ -82,4 +76,5 @@ public class Books {
             }
         }
     }
+
 }

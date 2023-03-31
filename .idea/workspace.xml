@@ -5,10 +5,13 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
     <option name="SHOW_STRUCTURE" value="true" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="71af6d7a-2272-491b-ae61-f1a90ad7037d" name="Changes" comment="23rd March&#10;--&gt; errors in login menu solved">
+    <list default="true" id="71af6d7a-2272-491b-ae61-f1a90ad7037d" name="Changes" comment="23rd March&#10;--&gt; errors in search solved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Books.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,12 +61,20 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mansi/IdeaProjects/Library_Management_System&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Study/Projects/Library Management System&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
@@ -88,13 +99,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676643506703</updated>
-    </task>
-    <task id="LOCAL-00001" summary="17th Feb College">
-      <created>1676643780519</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1676643780519</updated>
+      <workItem from="1680165544404" duration="302000" />
+      <workItem from="1680171630141" duration="36000" />
+      <workItem from="1680171674783" duration="221000" />
+      <workItem from="1680272639879" duration="166000" />
     </task>
     <task id="LOCAL-00002" summary="17th Feb College">
       <created>1676644055348</created>
@@ -432,8 +440,18 @@
       <option name="project" value="LOCAL" />
       <updated>1679573944905</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="23rd March&#10;--&gt; errors in search solved">
+      <created>1679589334789</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1679589334789</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -453,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="23rd feb&#10;return days finally completed&#10;now optimizing it" />
     <MESSAGE value="23rd feb&#10;return days optimized" />
     <MESSAGE value="24th feb&#10;optimized" />
     <MESSAGE value="24th feb&#10;error solved" />
@@ -478,7 +495,8 @@
     <MESSAGE value="22nd March&#10;in return book if student has issued no book then dont ask to search id" />
     <MESSAGE value="23rd March&#10;--&gt; delete books solved" />
     <MESSAGE value="23rd March&#10;--&gt; errors in login menu solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="23rd March&#10;--&gt; errors in login menu solved" />
+    <MESSAGE value="23rd March&#10;--&gt; errors in search solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="23rd March&#10;--&gt; errors in search solved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
